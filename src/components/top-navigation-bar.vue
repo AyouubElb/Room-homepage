@@ -1,5 +1,14 @@
 <template>
   <div class="nav-bar">
+    <div class="sidebar-btn">
+      <svg width="20" height="14" xmlns="http://www.w3.org/2000/svg">
+        <path
+          d="M20 12v2H0v-2h20zm0-6v2H0V6h20zm0-6v2H0V0h20z"
+          fill="#FFF"
+          fill-rule="evenodd"
+        />
+      </svg>
+    </div>
     <div class="logo">
       <svg width="62" height="14" xmlns="http://www.w3.org/2000/svg">
         <path
@@ -23,6 +32,10 @@ export default {};
 <style>
 .nav-bar {
   display: flex;
+}
+
+.sidebar-btn {
+  display: none;
 }
 
 .logo {
@@ -55,5 +68,17 @@ export default {};
 
 .navigation-menu li:hover::after {
   transform: scaleX(1);
+}
+
+@media only screen and (max-width: 600px) {
+  .sidebar-btn {
+    display: block;
+  }
+  .logo {
+    margin-inline: auto;
+  }
+  .navigation-menu {
+    display: none;
+  }
 }
 </style>

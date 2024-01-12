@@ -60,8 +60,28 @@ ol {
 .home {
   height: 100vh;
   display: grid;
-  grid-template-columns: 1.5fr 0.75fr;
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: 1fr 1fr 1fr;
   font-family: var(--ff);
   font-size: 12px;
+}
+
+.grid-col-span-3 {
+  grid-column: span 3;
+}
+
+.grid-col-span-4 {
+  grid-column: span 4;
+}
+
+.grid-col-span-6 {
+  grid-column: span 6;
+}
+
+@media only screen and (max-width: 600px) {
+  .home {
+    display: flex;
+    flex-direction: column;
+  }
 }
 </style>

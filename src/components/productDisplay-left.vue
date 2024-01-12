@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="grid-col-span-3">
     <img src="../assets/images/image-about-dark.jpg" alt="" />
   </div>
 </template>

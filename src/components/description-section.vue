@@ -1,12 +1,33 @@
 <template>
-  <div class="desc-section-container">
+  <div class="desc-section-container grid-col-span-4">
+    <div class="nav-icons-mobile nav-icons">
+      <div class="icon-angle-left" @click="dataStore.previousData()">
+        <svg width="14" height="24" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M13 0L1 12l12 12"
+            stroke="#FFF"
+            fill="none"
+            fill-rule="evenodd"
+          />
+        </svg>
+      </div>
+      <div class="icon-angle-right" @click="dataStore.nextData()">
+        <svg width="14" height="24" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M1 0l12 12L1 24"
+            stroke="#FFF"
+            fill="none"
+            fill-rule="evenodd"
+          />
+        </svg>
+      </div>
+    </div>
     <div class="desc-section-content">
-      <h1 class="desc-section-title">Discover innovative ways to decorate</h1>
+      <h1 class="desc-section-title">
+        {{ currentContent.descTitle }}
+      </h1>
       <p class="desc-section-text">
-        We provide unmatched quality, comfort, and style for property owners
-        across the country. Our experts combine form and function in bringing
-        your vision to life. Create a room in your own style with our collection
-        and make your property a reflection of you and what you love.
+        {{ currentContent.descText }}
       </p>
       <div class="shop-now-btn">
         <p>Shop now</p>
@@ -18,21 +39,59 @@
         </svg>
       </div>
     </div>
+    <div class="nav-icons">
+      <div class="icon-angle-left" @click="dataStore.previousData()">
+        <svg width="14" height="24" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M13 0L1 12l12 12"
+            stroke="#FFF"
+            fill="none"
+            fill-rule="evenodd"
+          />
+        </svg>
+      </div>
+      <div class="icon-angle-right" @click="dataStore.nextData()">
+        <svg width="14" height="24" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M1 0l12 12L1 24"
+            stroke="#FFF"
+            fill="none"
+            fill-rule="evenodd"
+          />
+        </svg>
+      </div>
+    </div>
   </div>
 </template>
 <script>
-export default {};
+import { useDataStore } from "@/stores/DataStores";
+export default {
+  setup() {
+    const dataStore = useDataStore();
+    return {
+      dataStore,
+    };
+  },
+  data() {
+    return {};
+  },
+  computed: {
+    currentContent() {
+      return this.dataStore.currentData;
+    },
+  },
+};
 </script>
 <style>
 .desc-section-container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
 }
 
 .desc-section-content {
-  width: 67%;
+  width: 65%;
+  margin-top: auto;
 }
 
 .desc-section-title {
@@ -45,11 +104,12 @@ export default {};
 
 .desc-section-text {
   color: var(--dark-gray-clr);
-  line-height: 1.25;
-  margin-bottom: 1.5rem;
+  line-height: 1.5;
+  margin-bottom: 2rem;
 }
 
 .shop-now-btn {
+  font-weight: 700;
   display: flex;
   color: var(--black-clr);
   fill: var(--black-clr);
@@ -69,5 +129,41 @@ export default {};
 
 .shop-now-btn svg {
   cursor: pointer;
+}
+
+.nav-icons {
+  margin-top: auto;
+  margin-right: auto;
+  display: flex;
+}
+
+.nav-icons > * {
+  background-color: var(--black-clr);
+  padding: 1rem 1.5rem;
+  cursor: pointer;
+}
+
+.nav-icons > *:hover {
+  background-color: var(--v-dark-gray-clr);
+}
+
+.nav-icons-mobile {
+  margin-left: auto;
+  margin-right: 0;
+  margin-top: -56px;
+  display: none;
+}
+
+@media only screen and (max-width: 600px) {
+  .desc-section-content {
+    width: 85%;
+    margin: 4rem 0;
+  }
+  .nav-icons {
+    display: none;
+  }
+  .nav-icons-mobile {
+    display: flex;
+  }
 }
 </style>
