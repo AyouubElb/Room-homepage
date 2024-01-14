@@ -3,7 +3,5 @@
     <img src="../assets/images/image-about-dark.jpg" alt="" />
   </div>
 </template>
-<script>
-export default {};
-</script>
+<script setup></script>
 <style></style>

@@ -1,16 +1,10 @@
 <template>
-  <HomePage />
+  <main>
+    <HomePage />
+  </main>
 </template>
-
-<script>
+<script setup>
 import HomePage from "./views/HomePage.vue";
-
-export default {
-  name: "App",
-  components: {
-    HomePage,
-  },
-};
 </script>
 
 <style></style>

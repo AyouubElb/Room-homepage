@@ -7,23 +7,14 @@
     <productDisplay-right />
   </div>
 </template>
-<script>
+<script setup>
 import AboutSection from "../components/about-section.vue";
 import DescriptionSection from "../components/description-section.vue";
 import MainSection from "../components/main-section.vue";
 import ProductDisplayLeft from "../components/productDisplay-left";
 import ProductDisplayRight from "../components/productDisplay-right.vue";
-
-export default {
-  components: {
-    MainSection,
-    AboutSection,
-    DescriptionSection,
-    ProductDisplayLeft,
-    ProductDisplayRight,
-  },
-};
 </script>
+
 <style>
 :root {
   --dark-gray-clr: hsl(0, 0%, 63%);

@@ -26,15 +26,14 @@
     </ul>
   </div>
 </template>
-<script>
-export default {};
-</script>
+<script setup></script>
 <style>
 .nav-bar {
   display: flex;
 }
 
 .sidebar-btn {
+  cursor: pointer;
   display: none;
 }
 

@@ -8,32 +8,20 @@
     <top-navigation-bar />
   </div>
 </template>
-<script>
+<script setup>
+import { ref, computed } from "vue";
 import { useDataStore } from "@/stores/DataStores";
 import topNavigationBar from "./top-navigation-bar.vue";
-export default {
-  setup() {
-    const dataStore = useDataStore();
-    return {
-      dataStore,
-    };
-  },
-  components: {
-    topNavigationBar,
-  },
-  data() {
-    return {};
-  },
-  computed: {
-    image() {
-      if (window.innerWidth > 600) {
-        return this.dataStore.currentData.mainDeskImg;
-      } else {
-        return this.dataStore.currentData.mainMobImg;
-      }
-    },
-  },
-};
+
+const dataStore = useDataStore();
+
+const image = computed(() => {
+  if (window.innerWidth > 600) {
+    return dataStore.currentData.mainDeskImg;
+  } else {
+    return dataStore.currentData.mainMobImg;
+  }
+});
 </script>
 <style>
 .main-container {
@@ -46,6 +34,7 @@ export default {
 
 @media only screen and (max-width: 600px) {
   .main-container {
+    padding-inline: 1.5rem;
     padding-bottom: 18.5rem;
   }
 }
