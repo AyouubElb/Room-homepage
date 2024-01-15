@@ -65,7 +65,7 @@
 </template>
 <script setup>
 import { computed } from "vue";
-import { useDataStore } from "@/stores/DataStores";
+import { useDataStore } from "@/stores/DataStore";
 
 const dataStore = useDataStore();
 
@@ -73,24 +73,7 @@ const currentContent = computed(() => {
   return dataStore.currentData;
 });
 </script>
-<!--
-<script>
-import { useDataStore } from "@/stores/DataStores";
-export default {
-  setup() {
-    const dataStore = useDataStore();
-    return {
-      dataStore,
-    };
-  },
-  computed: {
-    currentContent() {
-      return this.dataStore.currentData;
-    },
-  },
-};
-</scr>
--->
+
 <style>
 .desc-section-container {
   display: flex;
@@ -173,6 +156,7 @@ export default {
   }
   .nav-icons-mobile {
     display: flex;
+    z-index: 1;
   }
 }
 </style>

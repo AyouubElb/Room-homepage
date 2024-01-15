@@ -27,6 +27,7 @@ export const useDataStore = defineStore("DataStore", {
         },
       ],
       index: 0,
+      mobileNav: false,
     };
   },
   getters: {
@@ -44,6 +45,12 @@ export const useDataStore = defineStore("DataStore", {
       if (this.index > 0) {
         this.index--;
       }
+    },
+    openMobileNav() {
+      this.mobileNav = true;
+    },
+    closeMobileNav() {
+      this.mobileNav = false;
     },
   },
 });

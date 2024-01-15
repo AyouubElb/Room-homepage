@@ -1,6 +1,6 @@
 <template>
-  <div class="home">
-    <main-section />
+  <div class="home" ref="pageRef">
+    <main-section :pageOffsetWidth="pageOffsetWidth.value" />
     <description-section />
     <productDisplay-left />
     <about-section />
@@ -13,6 +13,17 @@ import DescriptionSection from "../components/description-section.vue";
 import MainSection from "../components/main-section.vue";
 import ProductDisplayLeft from "../components/productDisplay-left";
 import ProductDisplayRight from "../components/productDisplay-right.vue";
+import { ref, onMounted } from "vue";
+
+const pageRef = ref(null);
+const pageOffsetWidth = ref(0);
+
+onMounted(() => {
+  if (pageRef.value) {
+    pageOffsetWidth.value = pageRef.value.offsetWidth;
+  }
+  console.log("pageOffsetWidth", pageOffsetWidth.value);
+});
 </script>
 
 <style>

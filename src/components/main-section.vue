@@ -4,16 +4,25 @@
     :style="{
       backgroundImage: `url(${require('@/assets/images/' + image)})`,
     }"
+    ref="mainSectionRef"
   >
-    <top-navigation-bar />
+    <top-navigation-bar v-if="!dataStore.mobileNav" />
+    <mobileNavbar v-if="dataStore.mobileNav" />
   </div>
 </template>
 <script setup>
-import { ref, computed } from "vue";
-import { useDataStore } from "@/stores/DataStores";
+import { ref, computed, watch, onMounted } from "vue";
+import { useDataStore } from "@/stores/DataStore";
 import topNavigationBar from "./top-navigation-bar.vue";
+import mobileNavbar from "./mobileNavbar.vue";
 
+defineProps({
+  pageOffsetWidth: Number,
+  default: 0,
+});
 const dataStore = useDataStore();
+
+const innerWidth = ref(window.innerWidth);
 
 const image = computed(() => {
   if (window.innerWidth > 600) {
@@ -36,6 +45,7 @@ const image = computed(() => {
   .main-container {
     padding-inline: 1.5rem;
     padding-bottom: 18.5rem;
+    position: relative;
   }
 }
 </style>

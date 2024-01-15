@@ -1,6 +1,6 @@
 <template>
   <div class="nav-bar">
-    <div class="sidebar-btn">
+    <div class="sidebar-btn" @click="dataStore.openMobileNav">
       <svg width="20" height="14" xmlns="http://www.w3.org/2000/svg">
         <path
           d="M20 12v2H0v-2h20zm0-6v2H0V6h20zm0-6v2H0V0h20z"
@@ -18,15 +18,20 @@
         />
       </svg>
     </div>
-    <ul class="navigation-menu">
-      <li>Home</li>
-      <li>Shop</li>
-      <li>About</li>
-      <li>Contact</li>
-    </ul>
+    <div class="navigation-menu">
+      <ul>
+        <li>Home</li>
+        <li>Shop</li>
+        <li>About</li>
+        <li>Contact</li>
+      </ul>
+    </div>
   </div>
 </template>
-<script setup></script>
+<script setup>
+import { useDataStore } from "@/stores/DataStore";
+const dataStore = useDataStore();
+</script>
 <style>
 .nav-bar {
   display: flex;
@@ -42,7 +47,7 @@
   cursor: pointer;
 }
 
-.navigation-menu {
+.navigation-menu ul {
   display: flex;
   gap: 2rem;
   flex-direction: row;
