@@ -21,7 +21,7 @@
   align-items: center;
 }
 .about-section-content {
-  width: 70%;
+  width: 80%;
 }
 
 .about-section-title {

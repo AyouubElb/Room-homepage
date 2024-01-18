@@ -65,7 +65,7 @@ ol {
   grid-template-columns: repeat(10, 1fr);
   grid-template-rows: 1fr 1fr 1fr;
   font-family: var(--ff);
-  font-size: 12px;
+  font-size: 14px;
 }
 
 .grid-col-span-3 {

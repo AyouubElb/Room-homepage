@@ -82,14 +82,14 @@ const currentContent = computed(() => {
 }
 
 .desc-section-content {
-  width: 65%;
+  width: 70%;
   margin-top: auto;
 }
 
 .desc-section-title {
-  font-size: 2.25rem;
+  font-size: 2.75rem;
   letter-spacing: -1.5px;
-  font-weight: 600;
+  font-weight: 700;
   color: var(--black-clr);
   margin-bottom: 1.5rem;
 }
@@ -113,6 +113,7 @@ const currentContent = computed(() => {
 }
 
 .shop-now-btn p {
+  font-size: 1rem;
   text-transform: uppercase;
   letter-spacing: 10px;
   cursor: pointer;
