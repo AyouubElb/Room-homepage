@@ -1,7 +1,7 @@
 <template>
   <div class="about-section-container grid-col-span-4">
     <div class="about-section-content">
-      <h4 class="about-section-title">About our furniture</h4>
+      <h2 class="about-section-title">About our furniture</h2>
       <p class="about-section-text">
         Our multifunctional collection blends design and function to suit your
         individual taste. Make each room unique, or pick a cohesive theme that
