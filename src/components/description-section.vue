@@ -96,7 +96,7 @@ const currentContent = computed(() => {
 
 .desc-section-text {
   color: var(--dark-gray-clr);
-  line-height: 1.75;
+  line-height: 1.5;
   margin-bottom: 2rem;
 }
 

@@ -64,7 +64,7 @@ const dataStore = useDataStore();
   background-color: var(--white-clr);
   display: block;
   width: 100%;
-  height: 1px;
+  height: 1.5px;
   margin-top: 5px;
   transform: scaleX(0);
   transition: transform 250ms ease-in;
