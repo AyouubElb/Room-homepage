@@ -87,16 +87,16 @@ const currentContent = computed(() => {
 }
 
 .desc-section-title {
-  font-size: 2.75rem;
+  font-size: 3rem;
   letter-spacing: -1.5px;
-  font-weight: 700;
+  font-weight: 600;
   color: var(--black-clr);
   margin-bottom: 1.5rem;
 }
 
 .desc-section-text {
   color: var(--dark-gray-clr);
-  line-height: 1.5;
+  line-height: 1.75;
   margin-bottom: 2rem;
 }
 

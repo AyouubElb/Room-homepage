@@ -35,7 +35,7 @@
 
 .about-section-text {
   color: var(--dark-gray-clr);
-  line-height: 1.5;
+  line-height: 1.75;
 }
 
 @media only screen and (max-width: 600px) {
